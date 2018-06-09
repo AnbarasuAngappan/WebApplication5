@@ -1,0 +1,7 @@
+The model backing the 'WebApplication5Context' context has changed since the database was created. 
+Consider using Code First Migrations to update the database
+
+
+Schema specified is not valid. Errors: 
+The mapping of CLR type to EDM type is ambiguous because multiple CLR types match the EDM type 'Customer'. 
+Previously found CLR type 'WebApplication5.Customer', newly found CLR type 'WebApplication5.Models.Customer'.
