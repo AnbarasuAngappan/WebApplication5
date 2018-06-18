@@ -15,30 +15,30 @@ namespace WebApplication5
 
     public partial class Customer
     {
-        [Display(Name ="Customer ID")]
+        [Display(Name ="Customer ID :")]
         public int CustomerID { get; set; }
 
-        [Display(Name ="Employee Name")]
+        [Display(Name ="Employee Name :")]
         public string CustomerName { get; set; }
 
-        [Display(Name ="Employee Middle Name")]
+        [Display(Name ="Employee Middle Name :")]
         public string ContactMidName { get; set; }
 
-        [Display(Name ="Employee Phone Number")]
+        [Display(Name ="Employee Phone Number :")]
         public int PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Email ID is not in the Valid Format")]
-        [Display(Name ="Employee email ID")]
+        [Display(Name ="Employee email ID :")]
         [DataType(DataType.EmailAddress)]        
         public string EmailID { get; set; }
 
         [Required(ErrorMessage = "Password required")]
-        [Display(Name ="Password")]
+        [Display(Name ="Password :")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Confirm Password required")]
-        [Display(Name ="Confirm Password")]
+        [Display(Name ="Confirm Password :")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Error : Confirm password does not match with password")]
         public string ConfirmPassword { get; set; }

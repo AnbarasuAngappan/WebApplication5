@@ -57,8 +57,7 @@ namespace WebApplication5.Controllers
 
             return View(customer);
         }
-
-        // GET: Customers/Edit/5
+      
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -72,24 +71,23 @@ namespace WebApplication5.Controllers
             }
             return View(customer);
         }
-
-        // POST: Customers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,CustomerName,ContactMidName,PhoneNumber,EmailID,Password,ConfirmPassword")] Customer customer)
+        public ActionResult Edit()//[Bind(Include = "CustomerID,CustomerName,ContactMidName,PhoneNumber,EmailID,Password,ConfirmPassword")]Customer customer
         {
             if (ModelState.IsValid)
             {
-                entities.Entry(customer).State = EntityState.Modified;
+                Customer customers = new Customer();
+                UpdateModel(customers);//UpdateModel<Customer>(customers);
+                entities.Entry(customers).State = EntityState.Modified;
                 entities.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(customer);
+            return View();
         }
 
-        // GET: Customers/Delete/5
+      
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +102,7 @@ namespace WebApplication5.Controllers
             return View(customer);
         }
 
-        // POST: Customers/Delete/5
+    
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
